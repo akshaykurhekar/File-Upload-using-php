@@ -15,7 +15,9 @@
 <body>
 	
 <div class="container">
-<h2>This is a code for image update using Form-Modal</h2>	
+	<div class="align-self-center m-lg-3" style="padding-top: 1.5rem; padding-bottom: 0.5rem;">
+		<h2>Upload File into Database using PHP</h2>			
+	</div>
 
 	<div class="row jumbotron bg-light">
 		<div class="col-sm-10"><h3>click hear to upload file</h3></div>
@@ -43,11 +45,11 @@
 						$stmt->execute();
 						$row=$stmt->fetchAll();
 						//$conn=null();
-
+						$id =1;
 						foreach ($row as $key) {
 					?>
 					<tr>
-						<td><?php echo $key['id'];?></td>
+						<td><?php echo $id; $id++; ?></td>
 						<td><?php echo $key['image'];?></td>
 						<td><img src="destFile/<?php echo $key['image'];?>" style="height: 5rem" class="img" ></td>
 						<td><a class="btn btn-danger m-2" href="back.php?id=<?php echo $key['id'];?>" name="deleteFile">Delete</a></td>
